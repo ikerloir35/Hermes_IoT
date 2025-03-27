@@ -1,4 +1,4 @@
-# Hermes IoT - Sensorización del Jardín Botánico de Barcelona
+# Hermes IoT - IoT infrastructure for monitoring the pond area of the Barcelona Botanical Garden
 
 ## Project Summary
 

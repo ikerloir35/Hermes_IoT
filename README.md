@@ -1,20 +1,182 @@
-# Infraestructura de software: Sensorización de la zona del estanque del Jardín Botánico de Barcelona
-## Hermes IoT
-Proyecto de sensorización IoT para la asignatura IoTm Internet de las Cosas del CFGS de DAM
-## Uso
-El proyecto está dividido en dos directorios principales:
-1. docker-iot-api-server --> Contiene todos los archivos necesarios para simular el servidor de backend del proyecto.
-2. docker-iot-broker --> Contiene los servicios de broker MQTT y la simulación de flujo de métricas de sensores.
-3. hermes-iot-app --> Contiene el código fuente de la aplicación móvil Android, puede ejecutarse a través del emulador Android de IntelliJ Idea o Android Studio.
+# Hermes IoT - Sensorización del Jardín Botánico de Barcelona
 
-## Montaje del contenedor Docker
-Acceder al directorio /docker-iot-api-server y ejecutar --> docker compose up
-Acceder al directorio /docker-iot-broker y ejecutr --> docker compose up
-Es muy importante seguir este orden ya que los servicios de broker necesitan que este arriba el backend para ejecutarse corractamente.
+## Project Summary
 
-Para probar la app cliente, hay que ejecutarla en un emulador de Android.
+### Purpose
 
-## Equipo
-Iker López Iribas [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](ilopezir@uoc.edu) </br>
-Damià Belles Sampera [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](dbelles@uoc.edu) </br>
-Daniel Boj Cobos [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](dboj@uoc.edu) </br>              
+This project implements an IoT infrastructure for monitoring the pond area of the Barcelona Botanical Garden. It provides real-time sensor data monitoring and visualization through a mobile application.
+
+### Technology Stack
+
+- **Language**: Kotlin
+- **Platform**: Android
+- **Architecture**: MVVM with Clean Architecture
+- **Key Technologies**:
+  - Jetpack Compose for UI
+  - Dagger Hilt for dependency injection
+  - Retrofit for API communication
+  - MQTT for real-time sensor data
+  - Docker for containerization
+  - Kotlin Coroutines for asynchronous operations
+
+### Features
+
+- ## **Authentication**:
+
+  - User authentication system
+  - Secure session management
+  - Role-based access control
+
+- ## **Game Features**:
+
+  - Real-time sensor data monitoring
+  - Historical data visualization
+  - Customizable alerts and notifications
+  - Interactive dashboard
+  - Weather information API
+
+- ## **User Interface**:
+
+  - Modern Material Design 3
+  - Responsive layout
+  - Dark/Light theme support
+  - Intuitive navigation
+
+- ## **Technical Features**:
+  - Offline data caching
+  - Background data synchronization
+  - Real-time updates via MQTT
+  - RESTful API integration
+
+### Security
+
+- ## **Authentication Security**:
+
+  - Secure token-based authentication
+  - Encrypted data transmission
+  - Session management
+
+- ## **Data Security**:
+
+  - End-to-end encryption
+  - Secure data storage
+  - Regular security updates
+
+- ## **Best Practices**:
+  - Code obfuscation
+  - Secure API key management
+  - Regular security audits
+
+### Co-Developers
+
+- **Lead Developer**:
+  - Iker López Iribas
+  - Damià Belles Sampera
+  - Daniel Boj
+
+## Environment Setup
+
+### Prerequisites
+
+- Android Studio Hedgehog or newer
+- Docker Desktop
+- Git
+- JDK 17 or newer
+- Android SDK 34
+
+### Required API Keys
+
+1. **Google API Key**
+
+   - Required for Maps integration
+   - Place in local.properties file
+
+### Setup Instructions
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/ikerloir35/Hermes_IoT.git
+   cd Hermes_IoT
+   ```
+
+2. **Environment Configuration**
+
+   - Copy `local.properties.example` to `local.properties`
+   - Add your API keys and configuration
+
+3. **Build Configuration**
+
+   - Open project in Android Studio
+   - Sync Gradle files
+   - Build project
+
+4. **Run the Application**
+
+   - Start Docker containers:
+     ```bash
+     cd docker-iot-api-server && docker compose up
+     cd ../docker-iot-broker && docker compose up
+     ```
+   - Run app on Android emulator or physical device
+
+### Security Best Practices
+
+1. **API Key Management**
+
+   - Store keys in local.properties
+   - Never commit keys to version control
+   - Use environment variables in production
+
+2. **Code Security**
+
+   - Regular dependency updates
+   - Code signing
+   - ProGuard configuration
+
+3. **Development Workflow**
+   - Feature branch workflow
+   - Code review process
+   - Automated testing
+
+### Troubleshooting
+
+1. **Build Issues**
+
+   - Clean and rebuild project
+   - Update Gradle dependencies
+   - Check SDK versions
+
+2. **Runtime Issues**
+
+   - Check Docker container status
+   - Verify API endpoints
+   - Monitor logcat for errors
+
+3. **Authentication Issues**
+   - Verify API keys
+   - Check network connectivity
+   - Validate credentials
+
+### Production Deployment
+
+1. **Pre-deployment Checklist**
+
+   - Update version numbers
+   - Run security scan
+   - Test on multiple devices
+
+2. **Release Process**
+
+   - Generate signed APK
+   - Update documentation
+   - Deploy to Play Store
+
+3. **Post-deployment**
+   - Monitor crash reports
+   - Gather user feedback
+   - Plan updates
+
+## License
+
+This project is licensed under Creative Commons License - see the LICENSE file for details.

@@ -1,4 +1,4 @@
-# Hermes IoT - IoT infrastructure for monitoring the pond area of the Barcelona Botanical Garden
+# Hermes IoT - IoT infrastructure for monitoring the pond area of Barcelona's Botanical Garden
 
 ## Project Summary
 
